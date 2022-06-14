@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Button from "../../../UI/Button";
 import Link from "next/link";
 import Card from "../../../UI/Card";
-import Search from "../../../ui/Search";
+import Search from "../../../UI/Search";
 import MultiRangeSlider from "../../../UI/MultiRangeSlider";
 import FiltrationDropdown from "../../../UI/FiltrationDropdown";
 
