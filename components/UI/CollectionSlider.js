@@ -3,7 +3,7 @@ import { Navigation, EffectFade } from "swiper";
 import { useState } from "react";
 import "swiper/css/effect-fade";
 import CustomLink from "../UI/CustomLink";
-import classes from "./Collectionslider.module.css";
+import classes from "./CollectionSlider.module.css";
 import Video from "./Video";
 
 const CollectionSlider = ({ diamonds }) => {
