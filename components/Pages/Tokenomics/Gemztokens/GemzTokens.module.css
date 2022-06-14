@@ -1,0 +1,105 @@
+.Gemztokens {
+  padding: 5rem 3.88em 10rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-row-gap: 10rem;
+}
+
+.Gemztokens > div:nth-of-type(1),
+.Gemztokens > div:nth-of-type(3) {
+  grid-column: 1 / 6;
+}
+.Gemztokens > div:nth-of-type(2),
+.Gemztokens > div:nth-of-type(4) {
+  grid-column: 7 / 12;
+}
+
+.Gemztokens > div:nth-of-type(1) p .Gemztokens > div:nth-of-type(3) p {
+  font-family: "Voyager-regular";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.Gemztokens > div:nth-of-type(1) p {
+  font-size: 1.31rem;
+  line-height: 140%;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+}
+
+.Gemztokens > div:nth-of-type(2) {
+  position: relative;
+}
+.Gemztokens > div:nth-of-type(2) .GemzCards {
+  background: #121218;
+  backdrop-filter: blur(24px);
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+.Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) p {
+  max-width: 27rem;
+}
+
+.Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(2) p:nth-of-type(2) {
+  max-width: 27rem;
+}
+
+.Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(2) {
+  padding: 1.5rem 1rem;
+}
+
+.Gemztokens > div:nth-of-type(2) p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Gemztokens > div:nth-of-type(2) h4,
+.Gemztokens > div:nth-of-type(2) p {
+  margin-bottom: 1rem;
+}
+
+.Gemztokens > div:nth-of-type(2) p:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.ImagesWrapper {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.Gemztokens > div:nth-of-type(3) p,
+.Gemztokens > div:nth-of-type(4) p {
+  font-size: 2rem;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Gemztokens > div:nth-of-type(3) p:not(:last-of-type) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Gemztokens > div:nth-of-type(3) p:nth-of-type(1) {
+  margin-bottom: 1.375rem;
+  padding-bottom: 1.375rem;
+}
+.Gemztokens > div:nth-of-type(4) p {
+  max-width: 30rem;
+}
+
+.Gemztokens > div:nth-of-type(4) p span {
+  color: var(--color-white);
+  font-family: "Voyager-bold";
+  font-style: normal;
+  font-weight: 700;
+}

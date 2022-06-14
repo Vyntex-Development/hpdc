@@ -1,0 +1,84 @@
+.Footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.Footer > div {
+  display: flex;
+  align-items: flex-start;
+  padding: 0rem 3.88em 2.87rem;
+  font-family: "Voyager-bold";
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.FooterContentWrapper {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  padding-top: 2.87rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.FooterContentWrapper > div:nth-of-type(1),
+.FooterContentWrapper > div:nth-of-type(2) {
+  display: flex;
+}
+
+.FooterContentWrapper > div:nth-of-type(1) p {
+  line-height: 150%;
+}
+
+.FooterContentWrapper > div:nth-of-type(2) p {
+  line-height: 100%;
+}
+
+.FooterContentWrapper > div:nth-of-type(2) {
+  flex-direction: column;
+}
+
+.Footer p,
+.Contribute {
+  font-family: "Voyager-regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Footer p:nth-of-type(1) {
+  /* margin-bottom: 0.25rem; */
+}
+
+.LogoWrapper {
+  margin-right: 2.5rem;
+}
+
+.LinksWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.LinksWrapper a {
+  font-family: "Voyager-regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-decoration-line: underline;
+  color: #c4c4c4;
+}
+
+.LinksWrapper a:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.FooterContentWrapper .Contribute {
+  line-height: 100%;
+  text-align: right;
+}

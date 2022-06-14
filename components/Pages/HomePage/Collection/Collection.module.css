@@ -1,0 +1,16 @@
+.Collection {
+  padding: 0 3.88em 10rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.Collection > div:nth-of-type(1) {
+  grid-column: 2/12;
+}
+
+.Collection > div h2 {
+  margin-bottom: 5rem;
+}

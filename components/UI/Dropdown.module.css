@@ -1,0 +1,62 @@
+.Dropdown {
+  cursor: pointer;
+  width: 100%;
+  font-family: "Voyager-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 27rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.Dropdown svg {
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.Dropdown > div:last-of-type {
+  margin-left: auto;
+}
+
+.Color {
+  height: 0.75rem;
+  width: 0.75rem;
+  margin-right: 1.625rem;
+  border-radius: 50%;
+}
+
+.Panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.Panel p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.Active {
+  max-height: 150px;
+  transition: 0.3s all ease-in-out;
+}
+
+.FullOpacity {
+  opacity: 1;
+}
+
+.Closed {
+  max-height: 0px;
+}
+
+.Rotate svg {
+  transform: rotate(90deg);
+}

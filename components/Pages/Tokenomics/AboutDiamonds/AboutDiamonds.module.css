@@ -1,0 +1,61 @@
+.AboutDiamonds {
+  padding: 0 3.88em 10rem;
+}
+
+.AboutDiamonds h2,
+.AboutDiamonds > p {
+  max-width: 41rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.AboutDiamonds > p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.CardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  row-gap: 1.5rem;
+}
+
+.CardsWrapper > div {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #121218;
+  backdrop-filter: blur(1.5rem);
+  border-radius: 1rem;
+}
+
+.CardsWrapper > div > div {
+  width: 4rem;
+  height: 4rem;
+}
+.CardsWrapper h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.CardsWrapper p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.CardsWrapper > div:nth-of-type(1),
+.CardsWrapper > div:nth-of-type(4) {
+  grid-column: 2 / 6;
+}
+
+.CardsWrapper > div:nth-of-type(2),
+.CardsWrapper > div:nth-of-type(5) {
+  grid-column: 7 / 11;
+}
+
+.CardsWrapper > div:nth-of-type(3),
+.CardsWrapper > div:nth-of-type(6) {
+  grid-column: 12 / 16;
+}

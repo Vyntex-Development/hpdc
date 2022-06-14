@@ -1,0 +1,65 @@
+.FiltrationDropdown {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.Dropdown {
+  cursor: pointer;
+  width: 100%;
+  font-family: "Voyager-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+
+.Dropdown svg {
+  transform: translateY(0.05rem) rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.Dropdown > div:last-of-type {
+  margin-left: auto;
+}
+
+.Panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width: 100%;
+}
+
+.Panel p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.Active {
+  max-height: 350px;
+  transition: 0.3s all ease-in-out;
+}
+
+.FullOpacity {
+  opacity: 1;
+}
+
+.Closed {
+  max-height: 0px;
+}
+
+.Rotate svg {
+  transform: translateY(0.05rem) rotate(810deg);
+}
+
+.Multiple {
+  /* padding-top: 1rem; */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}

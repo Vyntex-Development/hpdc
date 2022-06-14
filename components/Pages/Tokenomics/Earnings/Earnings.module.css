@@ -1,0 +1,30 @@
+.Earnings {
+  padding: 0rem 3.88em 8rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.ImageWrapper {
+  grid-column: 1 / 8;
+  position: relative;
+  height: 25.5rem;
+}
+
+.Text {
+  grid-column: 9 / 12;
+  max-width: 18.5rem;
+}
+
+.Text > p {
+  font-size: 21px;
+  color: #ffffff;
+  margin: 1rem 0 1.5rem;
+}
+
+.Text > div p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Text > div p:nth-of-type(1) {
+  margin-bottom: 1.5rem;
+}

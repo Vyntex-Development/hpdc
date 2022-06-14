@@ -1,0 +1,130 @@
+.Hero {
+  position: relative;
+}
+
+.HeroLeft {
+  padding: 10.5rem 0 5rem;
+}
+
+.HeroCentered {
+  padding: 14.5rem 0 13rem;
+}
+
+.HeroCentered .HeroWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HeroTokenomics,
+.homePage {
+  height: 100vh;
+  padding: 17.5rem 0;
+}
+
+.homePage {
+  padding: 15.375rem 0;
+}
+
+.homePage > div .HeroWrapper > div {
+  position: relative;
+  z-index: 3;
+}
+
+.homePage > div .HeroWrapper > div > div {
+  display: flex;
+  margin-top: 7.75rem;
+}
+
+.homePage > div .HeroWrapper > div > div > div {
+  display: flex;
+  margin-right: 1rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.homePage > div .HeroWrapper > div > div > div span {
+  position: absolute !important;
+  z-index: 5;
+  background-color: red;
+  width: 72px !important;
+  height: 46px !important;
+  top: 8px;
+}
+
+.HeroWrapper span {
+  z-index: 2;
+}
+
+.Hero > div {
+  padding: 0 3.88em;
+}
+
+.homePage {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.Hero h1,
+.Hero p,
+.HeroTokenomics button,
+.homePage button {
+  z-index: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.HeroTokenomics button,
+.homePage button {
+  margin-top: 2.5rem;
+}
+
+.HeroTokenomics button:nth-of-type(1),
+.homePage button:nth-of-type(1) {
+  margin-right: 1rem;
+}
+
+.HeroTokenomics h1,
+.homePage h1 {
+  max-width: 37rem;
+  margin-bottom: 1.25rem;
+}
+
+.HeroLeft h1 {
+  margin-bottom: 1rem;
+}
+
+.HeroCentered h1 {
+  margin-bottom: 0.5rem;
+}
+
+.HeroLeft p,
+.HeroCentered p,
+.HeroTokenomics,
+.homePage {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.homePage p {
+  max-width: 27rem;
+}
+
+.HeroLeft p {
+  max-width: 17rem;
+}
+
+.HeroLeft p span {
+  color: var(--color-white);
+}
+
+.HeroCentered p {
+  max-width: 27rem;
+  text-align: center;
+}
+
+.imageWrapper {
+  width: 100vw;
+  height: 100%;
+}

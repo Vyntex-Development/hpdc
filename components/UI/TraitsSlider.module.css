@@ -1,0 +1,48 @@
+.SliderWraper {
+  width: calc(100% - 21rem);
+}
+
+.Slider {
+  display: none;
+}
+
+.Slide {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1.5rem;
+}
+
+.Slide div {
+  width: 100%;
+}
+
+.PaginationWrapper {
+  position: absolute;
+  top: calc(100% + 2.75rem - 13px);
+  right: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.Pagination {
+  height: 40px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  margin: 0 0.75rem;
+}
+
+.Pagination div {
+  width: 13px;
+  height: 2px;
+  display: block;
+  background-color: #121218;
+}
+
+.ActivePaginationEl {
+  background-color: rgb(255, 255, 255) !important;
+}

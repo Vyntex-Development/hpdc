@@ -1,0 +1,20 @@
+.StatsWrapper {
+  padding: 0rem 3.88em 10rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.Stats > p {
+  color: var(--color-white);
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  max-width: 18.18rem;
+}
+
+.Stats {
+  grid-column: 1/5;
+}
+
+.Chart {
+  grid-column: 7/-1;
+}

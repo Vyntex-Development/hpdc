@@ -1,0 +1,159 @@
+.TraitsStats {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5rem 0;
+  width: calc(100% - 7.77em);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.TraitsStatsWrapper {
+  position: relative;
+}
+
+.Paragraph {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 140%;
+  margin-top: 1rem;
+}
+
+.Stats {
+  padding-right: 6rem;
+  width: 33%;
+}
+
+.StatImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 25.5rem;
+  max-width: 22rem;
+  max-height: 25.5rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.DiamondImage {
+  width: calc(66% - 5.5rem);
+  height: 100%;
+  margin-right: 2.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10rem;
+}
+
+.DiamondImage .DiamondImageWrapper,
+.DiamondImage .CircleImageWrapper,
+.DiamondImage .DustImageWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DiamondImage .DiamondImageWrapper {
+  z-index: 3;
+  transform: translate(-50%, -60%);
+}
+
+.DiamondImage .DiamondImageWrapper {
+  animation: levitation 6s infinite;
+}
+
+.DiamondImage .CircleImageWrapper {
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.DiamondImage .DustImageWrapper {
+  z-index: 1;
+  transform: translate(-50%, -40%);
+}
+
+.ChartWrapper {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  z-index: 1;
+  top: 1.5rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1.5rem;
+}
+
+.ChartWrapper li {
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.ChartWrapper li:last-of-type {
+  margin-bottom: 0;
+}
+
+.StatsInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.StatsInfo {
+  font-family: "Voyager-regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 120%;
+}
+
+.StatsInfo span {
+  margin-bottom: 0.5rem;
+}
+
+.StatsInfo span:nth-of-type(1) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.StatsInfo span:nth-of-type(2) {
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+}
+
+.Bar {
+  background: rgba(128, 136, 142, 0.4);
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 0.5rem;
+  display: block;
+  position: relative;
+}
+
+.BarFill {
+  z-index: 2;
+  display: block;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px #ffffff;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0.5rem;
+}
+
+@keyframes levitation {
+  0% {
+    transform: translate(-50%, -60%);
+  }
+
+  50% {
+    transform: translate(-50%, -65%);
+  }
+
+  100% {
+    transform: translate(-50%, -60%);
+  }
+}

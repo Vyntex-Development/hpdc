@@ -1,0 +1,42 @@
+.Search {
+  margin-left: auto;
+  width: 2.875rem;
+  height: 2.875rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
+}
+
+.Search svg {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(0px, -50%);
+}
+
+.Open {
+  width: 19.875rem;
+  border-radius: 60px;
+}
+
+.Search input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  font-family: "Voyager-regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  padding: 0.9375rem 1rem;
+}
+
+.Search input::placeholder {
+  opacity: 0.3;
+}
