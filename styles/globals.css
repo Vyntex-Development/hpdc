@@ -272,6 +272,10 @@ video::-webkit-media-controls {
   transition: all 0.7s ease-in-out;
 }
 
+.collection {
+  overflow: hidden;
+}
+
 .collection .swiper {
   position: relative;
   overflow: hidden;
