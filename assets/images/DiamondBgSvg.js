@@ -23,7 +23,7 @@ const DiamondBgSvg = ({ img, id, setActive, activeTab }) => {
           fill="#09090D"
         />
       </svg>
-      <Image src={img.src} width={72} height={46} alt="hero-tab-img" />
+      <Image src={img} width={72} height={46} alt="hero-tab-img" />
     </div>
   );
 };

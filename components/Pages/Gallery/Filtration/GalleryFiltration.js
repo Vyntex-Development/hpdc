@@ -18,8 +18,9 @@ const GalleryFiltration = (props) => {
   const [activeButtons, setActiveButtons] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [areVisible, setAreVisible] = useState(true);
-  const [from, setFrom] = useState(0.0);
-  const [to, setTo] = useState(1.0);
+  const [opacityRange, setOpacityRange] = useState({ from: 0, to: 1 });
+  const [weightRange, setWeightRange] = useState({ from: 0, to: 5 });
+  const [rarityRange, setRarityRange] = useState({ from: 0, to: 100 });
 
   // const [spinnerIsVisible, setSpinnerIsVisible] = useState(true);
 
@@ -47,13 +48,19 @@ const GalleryFiltration = (props) => {
 
   let content;
 
-  const setRangeValues = (min, max) => {
-    setFrom(min);
-    setTo(max);
+  const setRangeValues = (min, max, name) => {
+    if (name === "opacity") {
+      setOpacityRange({ ...opacityRange, from: min, to: max });
+    }
+    if (name === "weight") {
+      setWeightRange({ ...weightRange, from: min, to: max });
+    }
+    if (name === "rarity") {
+      setRarityRange({ ...rarityRange, from: min, to: max });
+    }
   };
 
   const onSetRangeElementHandler = (ev, rangeType) => {
-    // console.log(ev, rangeType);
     // if (rangeType === "from" && ev.target.value < props.data?.min?.[0].rarity)
     //   return;
     // if (rangeType === "to" && ev.target.value > props.data?.max?.[0].rarity)
@@ -210,9 +217,11 @@ const GalleryFiltration = (props) => {
                   <MultiRangeSlider
                     min={0}
                     max={1}
-                    minValue={0.2}
-                    maxValue={0.8}
-                    onChange={({ min, max }) => setRangeValues(min, max)}
+                    minValue={0}
+                    maxValue={1}
+                    onChange={({ min, max }) =>
+                      setRangeValues(min, max, "opacity")
+                    }
                     onSetRangeElement={onSetRangeElementHandler}
                     step="0.1"
                   />
@@ -220,11 +229,65 @@ const GalleryFiltration = (props) => {
                 <div className={classes.FromToWrapper}>
                   <div>
                     <span>From: </span>
-                    {from}
+                    {opacityRange.from}
                   </div>
                   <div>
                     <span>To: </span>
-                    {to}
+                    {opacityRange.to}
+                  </div>
+                </div>
+              </div>
+            </FiltrationDropdown>
+            <FiltrationDropdown id="5" type="multiple" dropdownTitle="Weight">
+              <div className={classes.OpacityFilter}>
+                <div className={classes.DragDealer}>
+                  <MultiRangeSlider
+                    min={0}
+                    max={5}
+                    minValue={0}
+                    maxValue={5}
+                    onChange={({ min, max }) =>
+                      setRangeValues(min, max, "weight")
+                    }
+                    onSetRangeElement={onSetRangeElementHandler}
+                    step="0.01"
+                  />
+                </div>
+                <div className={classes.FromToWrapper}>
+                  <div>
+                    <span>From: </span>
+                    {weightRange.from}
+                  </div>
+                  <div>
+                    <span>To: </span>
+                    {weightRange.to}
+                  </div>
+                </div>
+              </div>
+            </FiltrationDropdown>
+            <FiltrationDropdown id="6" type="multiple" dropdownTitle="Rarity">
+              <div className={classes.OpacityFilter}>
+                <div className={classes.DragDealer}>
+                  <MultiRangeSlider
+                    min={0}
+                    max={100}
+                    minValue={0}
+                    maxValue={100}
+                    onChange={({ min, max }) =>
+                      setRangeValues(min, max, "rarity")
+                    }
+                    s
+                    step="0.01"
+                  />
+                </div>
+                <div className={classes.FromToWrapper}>
+                  <div>
+                    <span>From: </span>
+                    {rarityRange.from}
+                  </div>
+                  <div>
+                    <span>To: </span>
+                    {rarityRange.to}
                   </div>
                 </div>
               </div>

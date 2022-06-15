@@ -40,10 +40,10 @@ const GalleryPage = ({ data }) => {
     });
 
     const response = await fetch(
-      `https://strapi-ranger-h7d5y.ondigitalocean.app/${query}&_limit=6`
+      `https://strapi-ranger-h7d5y.ondigitalocean.app/?_sort=id:ASC&${query}&_limit=6`
     );
     const allDiamonds = await fetch(
-      `https://strapi-ranger-h7d5y.ondigitalocean.app/${query}`
+      `https://strapi-ranger-h7d5y.ondigitalocean.app/?_sort=id:ASC&${query}`
     );
     if (!response.ok || !allDiamonds.ok) {
       console.log("error");
@@ -71,13 +71,13 @@ const GalleryPage = ({ data }) => {
 
     let resp = await fetch(
       `https://strapi-ranger-h7d5y.ondigitalocean.app/${
-        query ? query : "diamonds?"
+        query ? query : "diamonds?_sort=id:ASC&"
       }&_start=${diamonds.length}&_limit=6`
     );
 
     console.log(
       `https://strapi-ranger-h7d5y.ondigitalocean.app/${
-        query ? query : "diamonds?"
+        query ? query : "diamonds?_sort=id:ASC&"
       }&_start=${diamonds.length}&_limit=6`
     );
 
@@ -178,7 +178,7 @@ const GalleryPage = ({ data }) => {
         setQuery(null);
 
         let resp = await fetch(
-          `https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_limit=6`
+          `https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=id:ASC&_limit=6`
         );
         const data = await resp.json();
 

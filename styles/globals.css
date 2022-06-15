@@ -157,6 +157,14 @@ p {
   cursor: auto !important;
 }
 
+.traits-slider .swiper-button-prev {
+  left: 8rem !important;
+}
+
+.traits-slider .swiper-button-next {
+  left: 11.5rem !important;
+}
+
 .swiper-button-prev {
   left: 0rem !important;
 }
@@ -247,6 +255,9 @@ video::-webkit-media-controls {
 .active-slider {
   display: block !important;
   height: 100%;
+}
+
+.switch-container {
   position: relative;
 }
 
@@ -297,6 +308,27 @@ video::-webkit-media-controls {
 
 .swiper-slide-active {
   z-index: 1 !important;
+}
+
+.animate-hero-open {
+  animation: hero-active 3s;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.animate-hero-closed {
+  display: none;
+  position: relative;
+}
+
+@keyframes hero-active {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes dash {

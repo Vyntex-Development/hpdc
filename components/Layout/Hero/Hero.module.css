@@ -37,24 +37,6 @@
   margin-top: 7.75rem;
 }
 
-.homePage > div .HeroWrapper > div > div > div {
-  display: flex;
-  margin-right: 1rem;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.homePage > div .HeroWrapper > div > div > div span {
-  position: absolute !important;
-  z-index: 5;
-  background-color: red;
-  width: 72px !important;
-  height: 46px !important;
-  top: 8px;
-}
-
 .HeroWrapper span {
   z-index: 2;
 }

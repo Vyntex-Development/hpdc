@@ -1,0 +1,25 @@
+.SwitchWrapper {
+  position: absolute;
+  bottom: 15.07rem;
+  left: 0;
+  display: flex;
+  padding-left: 3.88em;
+}
+
+.SwitchWrapper > div {
+  display: flex;
+  margin-right: 1rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.SwitchWrapper > div span {
+  position: absolute !important;
+  z-index: 5;
+  background-color: red;
+  width: 72px !important;
+  height: 46px !important;
+  top: 8px;
+}

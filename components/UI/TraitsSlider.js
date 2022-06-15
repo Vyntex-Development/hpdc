@@ -60,9 +60,11 @@ const TraitsSlider = ({ categories, filtersWrapperWidth, activeCategory }) => {
 
   return (
     <div
+      className="traits-slider"
       style={{
         width: `calc(100% - ${filtersWrapperWidth}px)`,
         paddingLeft: "8rem",
+        position: "relative",
       }}
     >
       {categories.map((category, index) => {

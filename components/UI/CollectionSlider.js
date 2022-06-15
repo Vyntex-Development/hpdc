@@ -84,7 +84,7 @@ const CollectionSlider = ({ diamonds }) => {
           );
         })}
         <div className={classes.PaginationWrapper}>
-          <span className="range-from">01</span>
+          <span className="range-from">0{activeSlide}</span>
           <div className={classes.Pagination}>
             {Array(diamonds.length)
               .fill()

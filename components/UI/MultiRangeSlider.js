@@ -53,7 +53,7 @@ const MultiRangeSlider = ({
   useEffect(() => {
     if (maxVal > max || minVal < min) return;
     onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+  }, [minVal, maxVal]);
 
   //   ${classes["thumb--zindex-5"] ? minVal > max - 100 : ""}
   return (
@@ -68,7 +68,6 @@ const MultiRangeSlider = ({
         onChange={(event) => {
           let decrementValue = step === "0.1" ? 0.1 : 1;
           const value = Math.min(+event.target.value, maxVal - decrementValue);
-          console.log(value);
           setMinVal(value);
           event.target.value = value.toString();
           onSetRangeElement(event, "from");
