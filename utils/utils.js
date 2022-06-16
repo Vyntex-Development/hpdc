@@ -111,12 +111,3 @@ export const changePostitionOfSwiperElements = (btns, parent) => {
     parentEl.append(btn);
   });
 };
-
-export const stats = [
-  { id: 1, stat: "41.94%", name: "Basic" },
-  { id: 2, stat: "34.04%", name: "Usual" },
-  { id: 3, stat: "10.50%", name: "Rare" },
-  { id: 4, stat: "8.31%", name: "Epic" },
-  { id: 5, stat: "3.51%", name: "Legendary" },
-  { id: 6, stat: "1.70%", name: "Mythical" },
-];

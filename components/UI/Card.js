@@ -1,7 +1,8 @@
 import classes from "./Card.module.css";
 import Video from "./Video";
+import React from "react";
 
-const Card = ({ mediaUrlWebm, mediaUrl, children }) => {
+const Card = React.forwardRef(({ mediaUrlWebm, mediaUrl, children }, ref) => {
   return (
     <div className={classes.Card}>
       <div className={classes.CardVideoWrapper}>
@@ -10,6 +11,6 @@ const Card = ({ mediaUrlWebm, mediaUrl, children }) => {
       <div className={classes.CardInfoWrapper}>{children}</div>
     </div>
   );
-};
+});
 
 export default Card;

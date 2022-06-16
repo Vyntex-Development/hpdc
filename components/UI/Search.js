@@ -1,7 +1,7 @@
 import SearchSvg from "../../assets/images/SearchSvg";
 import classes from "./Search.module.css";
 import { useState } from "react";
-const Search = (props) => {
+const Search = ({ inputChangedHandler, setCurrentValue }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -9,8 +9,9 @@ const Search = (props) => {
       {open && (
         <input
           type="text"
-          placeholder="Search by # Number
-"
+          onChange={(ev) => inputChangedHandler(ev, "id")}
+          onBlur={setCurrentValue}
+          placeholder="Search by # Number"
         />
       )}
       <SearchSvg

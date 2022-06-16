@@ -1,14 +1,20 @@
 import CrossSvg from "../../assets/images/CrossSvg";
 import classes from "./FiltrationDropdown.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const FiltrationDropdown = ({ id, dropdownTitle, children, type }) => {
+const FiltrationDropdown = ({ id, dropdownTitle, children, type, reset }) => {
   const [active, setActive] = useState("0");
 
   const setActiveHandler = (_, id) => {
-    console.log(id);
     setActive(active === id ? "" : id);
   };
+
+  useEffect(() => {
+    if (reset) {
+      setActive("0");
+    }
+  }, [reset]);
+
   return (
     <div className={classes.FiltrationDropdown}>
       <div

@@ -1,18 +1,22 @@
 import classes from "./TraitsStats.module.css";
 import Image from "next/image";
-import StatsGridImage from "../../../../assets/images/stats-grid-image.png";
-import Diamond from "../../../../assets/images/diamond.png";
-import Dust from "../../../../assets/images/dust.png";
-import DiamondCircle from "../../../../assets/images/diamond-circle.png";
-import { stats } from "../../../../utils/utils";
 
-const TraitsStats = () => {
+const TraitsStats = ({ statistic }) => {
+  const {
+    title,
+    description,
+    image,
+    image_second,
+    image_third,
+    statistic_image,
+    stats,
+  } = statistic;
   return (
     <div className={classes.TraitsStatsWrapper}>
       <div className={classes.DiamondImage}>
         <div className={classes.CircleImageWrapper}>
           <Image
-            src={DiamondCircle.src}
+            src={image_second.data.attributes.url}
             alt="diamond-circle-image"
             width={582}
             height={438}
@@ -21,7 +25,7 @@ const TraitsStats = () => {
         </div>
         <div className={classes.DiamondImageWrapper}>
           <Image
-            src={Diamond.src}
+            src={image.data.attributes.url}
             alt="diamond-image"
             width={382}
             height={338}
@@ -30,7 +34,7 @@ const TraitsStats = () => {
         </div>
         <div className={classes.DustImageWrapper}>
           <Image
-            src={Dust.src}
+            src={image_third.data.attributes.url}
             alt="dust-image"
             width={802}
             height={538}
@@ -41,23 +45,20 @@ const TraitsStats = () => {
       <div className="container">
         <div className={classes.TraitsStats}>
           <div className={classes.Stats}>
-            <h2>Rarity</h2>
-            <p className={classes.Paragraph}>
-              Each diamond has its own rarity score based on the chance of being
-              generated through the algorithm..
-            </p>
+            <h2>{title}</h2>
+            <p className={classes.Paragraph}>{description}</p>
             <div className={classes.StatImageWrapper}>
               <ul className={classes.ChartWrapper}>
-                {stats.map(({ name, stat, id }) => {
+                {stats.map(({ name, value, id }) => {
                   return (
                     <li key={id}>
                       <span className={classes.StatsInfo}>
                         <span>{name}</span>
-                        <span>{stat}</span>
+                        <span>{value}</span>
                       </span>
                       <span className={classes.Bar}>
                         <span
-                          style={{ width: `${stat}` }}
+                          style={{ width: `${value}` }}
                           className={classes.BarFill}
                         ></span>
                       </span>
@@ -66,7 +67,7 @@ const TraitsStats = () => {
                 })}
               </ul>
               <Image
-                src={StatsGridImage.src}
+                src={statistic_image.data.attributes.url}
                 alt="grid-image"
                 layout="fill"
                 objectFit="cover"

@@ -1,11 +1,14 @@
 import Hero from "../../Layout/Hero/Hero";
-import HeroLayer from "../../../assets/images/hero-multiple-pages.png";
 import { useEffect, useState } from "react";
 import LeaderboardFiltration from "./Filtration/LeaderboardFiltration";
 
-const LeaderboardPage = ({ data }) => {
+const LeaderboardPage = ({ data, slices }) => {
+  const { title, description, image } = slices[0];
+
+  // console.log(pageData);
   const [diamonds, setDiamonds] = useState([]);
   const [currentType, setCurrentType] = useState("most");
+  const [reset, resetValues] = useState(false);
   const [range, setRange] = useState({});
   const [timer, setTimer] = useState(null);
   const [inputValue, setInputValue] = useState("");
@@ -44,6 +47,8 @@ const LeaderboardPage = ({ data }) => {
         type ? type : "DESC"
       }`;
 
+      console.log(url2);
+
       let [res1, res2] = await Promise.all([
         fetch(url1).then((response) => response.json()),
         fetch(url2).then((response) => response.json()),
@@ -56,6 +61,7 @@ const LeaderboardPage = ({ data }) => {
     }
 
     setQuery(query);
+    resetValues(false);
   };
 
   useEffect(() => {
@@ -121,6 +127,12 @@ const LeaderboardPage = ({ data }) => {
     if (val.trim() === "" && type === "from") {
       return;
     }
+
+    if (type === "id") {
+      fetchData({ id: val });
+      return;
+    }
+
     let range = modifyRange(val, type);
     const isLte = !!range.rarity_lte;
 
@@ -137,6 +149,9 @@ const LeaderboardPage = ({ data }) => {
   };
 
   const inputChangedHandler = (e, type) => {
+    if (type === "id") {
+      resetValues(true);
+    }
     setInputValue(e.target.value);
     clearTimeout(timer);
     const newTimer = setTimeout(() => {
@@ -194,9 +209,9 @@ const LeaderboardPage = ({ data }) => {
   return (
     <>
       <Hero
-        title="Leaderboard"
-        description="A collection of 10,000 unique algorithmically generated digital diamonds stored on the Solana blockchain."
-        image={HeroLayer.src}
+        title={title}
+        description={description}
+        image={image.data.attributes.url}
         page="leaderboard"
       ></Hero>
       <LeaderboardFiltration
@@ -209,6 +224,7 @@ const LeaderboardPage = ({ data }) => {
         count={count}
         min={minRarity}
         max={maxRarity}
+        reset={reset}
         setCurrentValue={setCurrentValueHadler}
       />
     </>

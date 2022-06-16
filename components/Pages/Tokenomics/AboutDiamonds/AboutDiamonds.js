@@ -3,7 +3,6 @@ import DigitalDiamondCard from "./DigitalDiamondCard/DigitalDiamondCard";
 
 const AboutDiamonds = ({ aboutDiamonds }) => {
   const { title, description, card: cards } = aboutDiamonds;
-  console.log(cards);
   return (
     <div className={`${classes.AboutDiamonds} container`}>
       <h2>{title}</h2>

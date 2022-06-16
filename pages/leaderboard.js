@@ -1,35 +1,35 @@
 import LeaderboardPage from "../components/Pages/Leaderboard/LeaderboardPage";
 import SEO from "../components/SEO/SEO";
-
+import { client } from "../utils/utils";
 const leaderBoard = ({ data }) => {
+  const { slices } = data.pageData.attributes;
   return (
     <>
       <SEO title="Leaderboard" />
-      <LeaderboardPage data={data} />;
+      <LeaderboardPage data={data} slices={slices} />;
     </>
   );
 };
 
-export async function getStaticProps(context) {
-  const res = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:DESC&_limit=6"
-  );
-  const data = await res.json();
+export async function getStaticProps() {
+  let [data, data1, data2, data3, { data: pageData }] = await Promise.all([
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:DESC&_limit=6"
+    ),
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds/count"
+    ),
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:ASC&_limit=1"
+    ),
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:DESC&_limit=1"
+    ),
 
-  const res1 = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds/count"
-  );
-  const data1 = await res1.json();
-
-  const res2 = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:ASC&_limit=1"
-  );
-  const data2 = await res2.json();
-
-  const res3 = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=rarity:DESC&_limit=1"
-  );
-  const data3 = await res3.json();
+    await client.request(
+      "https://lionfish-app-zi95r.ondigitalocean.app/api/leaderboard?populate=slices.image"
+    ),
+  ]);
 
   if (!data) {
     return {
@@ -44,6 +44,7 @@ export async function getStaticProps(context) {
         min: data2,
         max: data3,
         count: data1,
+        pageData,
       },
     },
     revalidate: 300,

@@ -1,5 +1,5 @@
 import classes from "./GalleryFiltration.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Button from "../../../UI/Button";
@@ -23,9 +23,11 @@ const GalleryFiltration = (props) => {
   const [rarityRange, setRarityRange] = useState({ from: 0, to: 100 });
 
   // const [spinnerIsVisible, setSpinnerIsVisible] = useState(true);
+  let content;
+
+  const filtersRef = useRef();
 
   const setActive = (type) => {
-    console.log(type);
     const modifiedActiveButtons = [...activeButtons];
     if (modifiedActiveButtons.some((btn) => btn === type)) {
       modifiedActiveButtons.splice(modifiedActiveButtons.indexOf(type), 1);
@@ -34,7 +36,6 @@ const GalleryFiltration = (props) => {
       modifiedActiveButtons.push(type);
       setActiveButtons(modifiedActiveButtons);
     }
-    console.log(modifiedActiveButtons);
   };
 
   useEffect(() => {
@@ -42,11 +43,15 @@ const GalleryFiltration = (props) => {
     // setSpinnerIsVisible(props.diamonds.length >= props.count ? false : true);
   }, [props.diamonds.length, props.count]);
 
+  useEffect(() => {
+    if (props.reset) {
+      setActiveButtons([]);
+    }
+  }, [props.reset]);
+
   const getMoreDiamonds = () => {
     props.onGetMoreDiamonds();
   };
-
-  let content;
 
   const setRangeValues = (min, max, name) => {
     if (name === "opacity") {
@@ -60,16 +65,21 @@ const GalleryFiltration = (props) => {
     }
   };
 
-  const onSetRangeElementHandler = (ev, rangeType) => {
-    // if (rangeType === "from" && ev.target.value < props.data?.min?.[0].rarity)
-    //   return;
-    // if (rangeType === "to" && ev.target.value > props.data?.max?.[0].rarity)
-    //   return;
-    // props.inputChangedHandler(ev, rangeType);
+  const onSetRangeElementHandler = (ev, rangeType, name, min, max) => {
+    console.log(min, max);
+    if (name === "opacity") {
+      props.setRangeValues(`${min}-${max}`, "opacity");
+    }
+    if (name === "weight") {
+      props.setRangeValues(`${min}-${max}`, "weight");
+    }
+    if (name === "rarity") {
+      props.setRangeValues(`${min}-${max}`, "rarity");
+    }
   };
 
   if (props.diamonds && props.diamonds.length === 0) {
-    content = <p>No items found</p>;
+    content = <p className={classes.NoItemsFound}>No items found</p>;
   }
 
   if (props.diamonds && props.diamonds.length !== 0) {
@@ -138,12 +148,14 @@ const GalleryFiltration = (props) => {
           </Button>
 
           <div
+            ref={filtersRef}
             className={`${classes.Filters} ${!areVisible ? classes.Close : ""}`}
           >
             <FiltrationDropdown
               id="1"
               type="multiple"
               dropdownTitle="Cut quality"
+              reset={props.reset}
             >
               <div className={classes.RarityWrapper}>
                 {quality.map((q) => {
@@ -165,7 +177,12 @@ const GalleryFiltration = (props) => {
                 })}
               </div>
             </FiltrationDropdown>
-            <FiltrationDropdown id="2" type="multiple" dropdownTitle="Color">
+            <FiltrationDropdown
+              id="2"
+              type="multiple"
+              dropdownTitle="Color"
+              reset={props.reset}
+            >
               <div className={classes.RarityWrapper}>
                 {colors.map((c) => {
                   return (
@@ -190,6 +207,7 @@ const GalleryFiltration = (props) => {
               id="3"
               type="multiple"
               dropdownTitle="Sub color"
+              reset={props.reset}
             >
               <div className={classes.RarityWrapper}>
                 {subColors.map((sC) => {
@@ -197,7 +215,7 @@ const GalleryFiltration = (props) => {
                     <Button
                       onClick={() => {
                         setActive(sC.name);
-                        props.setFilterValues(sC.name, "sub-color");
+                        props.setFilterValues(sC.name, "sub_color");
                       }}
                       key={sC.id}
                       type="filter"
@@ -211,7 +229,12 @@ const GalleryFiltration = (props) => {
                 })}
               </div>
             </FiltrationDropdown>
-            <FiltrationDropdown id="4" type="multiple" dropdownTitle="Opacity">
+            <FiltrationDropdown
+              id="4"
+              type="multiple"
+              dropdownTitle="Opacity"
+              reset={props.reset}
+            >
               <div className={classes.OpacityFilter}>
                 <div className={classes.DragDealer}>
                   <MultiRangeSlider
@@ -219,9 +242,11 @@ const GalleryFiltration = (props) => {
                     max={1}
                     minValue={0}
                     maxValue={1}
-                    onChange={({ min, max }) =>
-                      setRangeValues(min, max, "opacity")
-                    }
+                    name="opacity"
+                    reset={props.reset}
+                    onChange={({ min, max }) => {
+                      setRangeValues(min, max, "opacity");
+                    }}
                     onSetRangeElement={onSetRangeElementHandler}
                     step="0.1"
                   />
@@ -238,7 +263,12 @@ const GalleryFiltration = (props) => {
                 </div>
               </div>
             </FiltrationDropdown>
-            <FiltrationDropdown id="5" type="multiple" dropdownTitle="Weight">
+            <FiltrationDropdown
+              id="5"
+              type="multiple"
+              dropdownTitle="Weight"
+              reset={props.reset}
+            >
               <div className={classes.OpacityFilter}>
                 <div className={classes.DragDealer}>
                   <MultiRangeSlider
@@ -246,9 +276,12 @@ const GalleryFiltration = (props) => {
                     max={5}
                     minValue={0}
                     maxValue={5}
-                    onChange={({ min, max }) =>
-                      setRangeValues(min, max, "weight")
-                    }
+                    reset={props.reset}
+                    name="weight"
+                    onChange={({ min, max }) => {
+                      setRangeValues(min, max, "weight");
+                      // props.setFilterValues(`${min}-${max}`, "weight");
+                    }}
                     onSetRangeElement={onSetRangeElementHandler}
                     step="0.01"
                   />
@@ -265,7 +298,12 @@ const GalleryFiltration = (props) => {
                 </div>
               </div>
             </FiltrationDropdown>
-            <FiltrationDropdown id="6" type="multiple" dropdownTitle="Rarity">
+            <FiltrationDropdown
+              id="6"
+              type="multiple"
+              dropdownTitle="Rarity"
+              reset={props.reset}
+            >
               <div className={classes.OpacityFilter}>
                 <div className={classes.DragDealer}>
                   <MultiRangeSlider
@@ -273,11 +311,14 @@ const GalleryFiltration = (props) => {
                     max={100}
                     minValue={0}
                     maxValue={100}
-                    onChange={({ min, max }) =>
-                      setRangeValues(min, max, "rarity")
-                    }
-                    s
+                    reset={props.reset}
+                    name="rarity"
+                    onChange={({ min, max }) => {
+                      setRangeValues(min, max, "rarity");
+                      // props.setFilterValues(`${min}-${max}`, "rarity");
+                    }}
                     step="0.01"
+                    onSetRangeElement={onSetRangeElementHandler}
                   />
                 </div>
                 <div className={classes.FromToWrapper}>
@@ -294,9 +335,11 @@ const GalleryFiltration = (props) => {
             </FiltrationDropdown>
           </div>
         </div>
-
         <div className={classes.FiltratedItems}>
-          <Search />
+          <Search
+            inputChangedHandler={props.inputChangedHandler}
+            setCurrentValue={props.setCurrentValue}
+          />
           {content}
         </div>
       </div>

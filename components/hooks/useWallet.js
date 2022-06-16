@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useWallet = (props) => {
+const useWallet = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [errorMsg, setError] = useState("");
 
@@ -28,6 +28,7 @@ const useWallet = (props) => {
     isConnected: isConnected,
     setConnectionHandler: connectToWallet,
     removeConnectionHandler: disconnectWalletHandler,
+    errorMsg,
   };
 };
 export default useWallet;

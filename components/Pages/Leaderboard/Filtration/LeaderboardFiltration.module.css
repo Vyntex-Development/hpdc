@@ -463,6 +463,6 @@
 }
 
 .Filters .RarityWrapper {
-  justify-content: start;
+  justify-content: flex-start;
   padding: 1rem 0;
 }

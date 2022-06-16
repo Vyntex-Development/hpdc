@@ -1,32 +1,34 @@
 import GalleryPage from "../components/Pages/Gallery/GalleryPage";
 import SEO from "../components/SEO/SEO";
+import { client } from "../utils/utils";
 
 const gallery = ({ data }) => {
-  console.log(data);
+  const { slices } = data.pageData.attributes;
   return (
     <>
       <SEO title="Gallery" />
-      <GalleryPage data={data} />
+      <GalleryPage data={data} slices={slices} />
     </>
   );
 };
 
-export async function getStaticProps(context) {
-  const res = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/filtration-fields"
-  );
-  const data = await res.json();
-  const res1 = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=id:ASC&_limit=6"
-  );
-  const data1 = await res1.json();
+export async function getStaticProps() {
+  let [data, data1, data2, { data: pageData }] = await Promise.all([
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/filtration-fields"
+    ),
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds?_sort=id:ASC&_limit=6"
+    ),
+    await client.request(
+      "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds/count"
+    ),
+    await client.request(
+      "https://lionfish-app-zi95r.ondigitalocean.app/api/gallery?populate=slices.image"
+    ),
+  ]);
 
-  const res2 = await fetch(
-    "https://strapi-ranger-h7d5y.ondigitalocean.app/diamonds/count"
-  );
-  const data2 = await res2.json();
-
-  if (!data || !data1) {
+  if (!data || !data1 || !data2) {
     return {
       notFound: true,
     };
@@ -38,6 +40,7 @@ export async function getStaticProps(context) {
         filtration_fields: data,
         diamonds: data1,
         count: data2,
+        pageData,
       },
     },
     revalidate: 1,

@@ -1,5 +1,5 @@
 import classes from "./LeaderboardFiltration.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Button from "../../../UI/Button";
@@ -13,7 +13,6 @@ const LeaderboardFiltration = (props) => {
   const [activeButton, setActiveButton] = useState("DESC");
   const [hasMore, setHasMore] = useState(true);
   const [areVisible, setAreVisible] = useState(true);
-  const [dropdowns, setDropdowns] = useState([]);
   const [from, setFrom] = useState(props.data?.min?.[0].rarity);
   const [to, setTo] = useState(props.data?.max?.[0].rarity);
 
@@ -29,6 +28,12 @@ const LeaderboardFiltration = (props) => {
     // setSpinnerIsVisible(props.diamonds.length >= props.count ? false : true);
   }, [props.diamonds.length, props.count]);
 
+  useEffect(() => {
+    if (props.reset) {
+      setActiveButton("DESC");
+    }
+  }, [props.reset]);
+
   const getMoreDiamonds = () => {
     props.onGetMoreDiamonds();
   };
@@ -38,14 +43,6 @@ const LeaderboardFiltration = (props) => {
   const setRangeValues = (min, max) => {
     setFrom(min);
     setTo(max);
-  };
-
-  const dropdownHandler = (type) => {
-    const modifiedDropdowns = [...dropdowns];
-    modifiedDropdowns.some((dd) => dd === type)
-      ? modifiedDropdowns.splice(modifiedDropdowns.indexOf(type), 1)
-      : modifiedDropdowns.push(type);
-    setDropdowns(modifiedDropdowns);
   };
 
   const onSetRangeElementHandler = (ev, rangeType) => {
@@ -116,7 +113,12 @@ const LeaderboardFiltration = (props) => {
           <div
             className={`${classes.Filters} ${!areVisible ? classes.Close : ""}`}
           >
-            <FiltrationDropdown id="1" type="multiple" dropdownTitle="Rarity">
+            <FiltrationDropdown
+              id="1"
+              type="multiple"
+              dropdownTitle="Rarity"
+              reset={props.reset}
+            >
               <div className={classes.RarityWrapper}>
                 <Button
                   onClick={() => setActive("ASC")}
@@ -134,7 +136,12 @@ const LeaderboardFiltration = (props) => {
                 </Button>
               </div>
             </FiltrationDropdown>
-            <FiltrationDropdown id="2" type="multiple" dropdownTitle="Opacity">
+            <FiltrationDropdown
+              id="2"
+              type="multiple"
+              dropdownTitle="Opacity"
+              reset={props.reset}
+            >
               <div className={classes.OpacityFilter}>
                 <div className={classes.DragDealer}>
                   <MultiRangeSlider
@@ -144,6 +151,7 @@ const LeaderboardFiltration = (props) => {
                     maxValue={props.data?.max?.[0].rarity}
                     onChange={({ min, max }) => setRangeValues(min, max)}
                     onSetRangeElement={onSetRangeElementHandler}
+                    reset={props.reset}
                     step="0.0001"
                   />
                 </div>
@@ -163,7 +171,10 @@ const LeaderboardFiltration = (props) => {
         </div>
 
         <div className={classes.FiltratedItems}>
-          <Search />
+          <Search
+            inputChangedHandler={props.inputChangedHandler}
+            setCurrentValue={props.setCurrentValue}
+          />
           {content}
         </div>
       </div>

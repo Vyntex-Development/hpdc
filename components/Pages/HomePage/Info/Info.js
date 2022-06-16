@@ -1,8 +1,7 @@
 import classes from "./Info.module.css";
 import Image from "next/image";
 
-const Info = ({ x, y, unique }) => {
-  console.log(unique);
+const Info = ({ x, y, unique, hovered }) => {
   const { image, moving_image, description } = unique;
   const [paragraphTextFirst, spanText, paragraphTextLast] =
     description.split("<>");
@@ -13,7 +12,12 @@ const Info = ({ x, y, unique }) => {
           <span>{paragraphTextFirst}</span>
           <span id="unique">
             {spanText}
-            <span style={{ transform: `translate(${x}px, ${y}px)` }}>
+            <span
+              style={{
+                transform: `translate(${x}px, ${y}px)`,
+                opacity: `${hovered ? "1" : "0"}`,
+              }}
+            >
               <Image
                 id="image"
                 width={200}

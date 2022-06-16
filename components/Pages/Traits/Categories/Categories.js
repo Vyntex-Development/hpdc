@@ -7,9 +7,9 @@ import TraitsSlider from "../../../UI/TraitsSlider";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, slider }) => {
+  const { title, description, choices } = slider;
   const [activeCategory, setActiveCategory] = useState(0);
-  // const [active, setActive] = useState("0");
   const filtersWrapperRef = useRef();
 
   const [filtersWrapperWidth, setFiltersWrapperWidth] = useState(null);
@@ -37,11 +37,8 @@ const Categories = ({ categories }) => {
     <div className="container">
       <div className={classes.CategoriesWrapper}>
         <div ref={filtersWrapperRef} className={classes.FiltersWrapper}>
-          <FiltrationDropdown id="1" dropdownTitle="Explore Categories">
-            <p className={classes.Paragraph}>
-              Each diamond is unique and comes with a set of specific features
-              such as those listed below.
-            </p>
+          <FiltrationDropdown id="1" dropdownTitle={title}>
+            <p className={classes.Paragraph}>{description}</p>
             <ul className={classes.FilterList}>
               {categories.map((category, index) => {
                 return (

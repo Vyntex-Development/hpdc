@@ -9,6 +9,8 @@ const MultiRangeSlider = ({
   maxValue,
   onSetRangeElement,
   step,
+  name,
+  reset,
 }) => {
   const [minVal, setMinVal] = useState(minValue);
   const [maxVal, setMaxVal] = useState(maxValue);
@@ -23,6 +25,13 @@ const MultiRangeSlider = ({
     },
     [min, max]
   );
+
+  useEffect(() => {
+    if (reset) {
+      setMinVal(min);
+      setMaxVal(max);
+    }
+  }, [reset]);
 
   // Set width of the range to decrease from the left side
   useEffect(() => {
@@ -70,7 +79,7 @@ const MultiRangeSlider = ({
           const value = Math.min(+event.target.value, maxVal - decrementValue);
           setMinVal(value);
           event.target.value = value.toString();
-          onSetRangeElement(event, "from");
+          onSetRangeElement(event, "from", name, event.target.value, maxVal);
         }}
         className={`${classes["thumb"]} ${classes["thumb--zindex-3"]} 
         `}
@@ -87,7 +96,7 @@ const MultiRangeSlider = ({
           const value = Math.max(+event.target.value, minVal + decrementValue);
           setMaxVal(value);
           event.target.value = value.toString();
-          onSetRangeElement(event, "to");
+          onSetRangeElement(event, "to", name, minVal, event.target.value);
         }}
         className={`${classes["thumb"]} ${classes["thumb--zindex-4"]}`}
       />

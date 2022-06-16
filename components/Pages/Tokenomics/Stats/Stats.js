@@ -4,7 +4,6 @@ import { useState } from "react";
 import ChartSvg from "../../../../assets/images/ChartSvg";
 
 const Stats = ({ tokenomics }) => {
-  console.log(tokenomics);
   const { title, description, dropdown: dropdowns } = tokenomics;
   const [active, setActive] = useState(1);
 

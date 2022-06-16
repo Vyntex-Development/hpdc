@@ -12,7 +12,7 @@ const HomePage = ({ diamonds, pageData }) => {
   const { hero_switch, slices, unique } = pageData;
   const { isConnected, setConnectionHandler, removeConnectionHandler } =
     useWallet();
-  const { x, y } = useMousePosition();
+  const { mousePosition, hovered } = useMousePosition();
   const [activeTab, setActiveTab] = useState(0);
   const [animation, updateAnimation] = useState(false);
 
@@ -97,7 +97,12 @@ const HomePage = ({ diamonds, pageData }) => {
           </div>
         );
       })}
-      <Info unique={unique} x={x} y={y} />
+      <Info
+        unique={unique}
+        x={mousePosition.x}
+        y={mousePosition.y}
+        hovered={hovered}
+      />
       <Collection diamonds={diamonds} />
     </>
   );
