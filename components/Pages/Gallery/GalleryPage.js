@@ -62,21 +62,21 @@ const GalleryPage = ({ data, slices }) => {
     const response = await fetch(
       `https://strapi-ranger-h7d5y.ondigitalocean.app/${query}&_limit=6`
     );
-    const allDiamonds = await fetch(
-      `https://strapi-ranger-h7d5y.ondigitalocean.app/${query}`
-    );
-    if (!response.ok || !allDiamonds.ok) {
+    // const allDiamonds = await fetch(
+    //   `https://strapi-ranger-h7d5y.ondigitalocean.app/${query}`
+    // );
+    if (!response.ok) {
       console.log("error");
     }
     const data = await response.json();
-    const totalCount = await allDiamonds.json();
+    const totalCount = count + 6;
     setQuery(query);
     setDiamonds(data);
     if (data.length === 0) {
       resetValues(true);
       setFilteredData({});
     }
-    setCount(totalCount.length);
+    setCount(totalCount);
   };
 
   useEffect(() => {
