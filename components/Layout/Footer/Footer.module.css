@@ -82,3 +82,24 @@
   line-height: 100%;
   text-align: right;
 }
+
+@media screen and (max-width: 767px) {
+  .FooterContentWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 1rem;
+  }
+
+  .FooterContentWrapper > div:nth-of-type(1) {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .LogoWrapper {
+    margin-right: 0;
+  }
+  .FooterContentWrapper > div:nth-of-type(2) {
+    row-gap: 1rem;
+  }
+}

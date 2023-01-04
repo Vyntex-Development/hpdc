@@ -55,3 +55,15 @@
 .HeaderCol nav ul a:last-of-type {
   margin-right: 0;
 }
+
+@media screen and (max-width: 991px) {
+  .Header > div {
+    padding: 1.5rem 5vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .HeaderCol nav ul {
+    display: none;
+  }
+}

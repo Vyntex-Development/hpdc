@@ -212,8 +212,42 @@
 }
 
 @media screen and (max-width: 991px) {
+  .FiltrationSection {
+    padding: 0 5vw;
+  }
+
   .FiltratedItems > div > div {
     grid-template-columns: repeat(2, 1fr);
     padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .FiltrationSection {
+    flex-direction: column;
+  }
+  .FiltersWrapper {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+  .FiltersWrapper > div {
+    padding-bottom: 0;
+  }
+
+  .FiltratedItems > div > div {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 0rem;
+  }
+  .FiltratedItems {
+    position: static;
+  }
+  .FiltersWrapper > div {
+    width: 100%;
+    max-width: none;
+  }
+
+  .FiltratedItems > div:nth-of-type(2) {
+    margin-top: 56px;
   }
 }

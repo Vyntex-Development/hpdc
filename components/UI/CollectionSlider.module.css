@@ -184,3 +184,39 @@
   display: flex;
   bottom: 1rem;
 }
+
+@media screen and (max-width: 991px) {
+  .SliderWrapper {
+    grid-column: 1 / 13;
+  }
+
+  .SlideCard {
+    grid-column: 1/6;
+    width: auto;
+    margin-right: 5rem;
+  }
+
+  .PaginationWrapper {
+    left: auto !important;
+    right: 8em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Slide {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .SlideCard {
+    margin-right: 1rem;
+  }
+  .PaginationWrapper {
+    top: auto !important;
+    bottom: 0;
+    display: none;
+  }
+  .ArrowsWrapper {
+    right: 0;
+    left: auto;
+    bottom: 0rem;
+  }
+}

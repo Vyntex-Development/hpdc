@@ -10,6 +10,10 @@
   padding: 34.5rem 0 34rem;
 }
 
+.HeroCentered h1 {
+  text-align: center;
+}
+
 .HeroCentered .HeroWrapper {
   display: flex;
   flex-direction: column;
@@ -126,5 +130,14 @@
 @media screen and (max-width: 1279px) {
   .homePage {
     padding: 10rem 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .HeroCentered {
+    padding: 11.5rem 0 11rem;
+  }
+  .Hero > div {
+    padding: 0 5vw;
   }
 }
