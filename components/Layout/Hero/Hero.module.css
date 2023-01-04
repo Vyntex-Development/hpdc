@@ -122,3 +122,9 @@
     padding: 14.5rem 0 13rem;
   }
 }
+
+@media screen and (max-width: 1279px) {
+  .homePage {
+    padding: 10rem 0;
+  }
+}

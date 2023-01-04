@@ -23,3 +23,8 @@
   height: 46px !important;
   top: 8px;
 }
+@media screen and (max-width: 1439px) {
+  .SwitchWrapper {
+    bottom: 5vh;
+  }
+}
