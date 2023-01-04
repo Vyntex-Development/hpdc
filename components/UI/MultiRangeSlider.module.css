@@ -113,3 +113,15 @@
   pointer-events: all;
   position: relative;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+    max-width: none;
+  }
+
+  .thumb {
+    width: 100%;
+    max-width: none;
+  }
+}

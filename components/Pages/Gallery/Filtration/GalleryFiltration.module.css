@@ -223,6 +223,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .OpacityFilter {
+    width: 100%;
+    max-width: none;
+  }
   .FiltrationSection {
     flex-direction: column;
   }
