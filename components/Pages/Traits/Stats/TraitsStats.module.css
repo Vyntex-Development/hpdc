@@ -1,7 +1,7 @@
 .TraitsStats {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
   padding: 5rem 0;
   width: calc(100% - 7.77em);
   margin: 0 auto;
@@ -155,5 +155,36 @@
 
   100% {
     transform: translate(-50%, -60%);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .DiamondImage .DiamondImageWrapper,
+  .DiamondImage .CircleImageWrapper,
+  .DiamondImage .DustImageWrapper {
+    top: 135%;
+    left: 92%;
+  }
+  .Stats {
+    width: 100%;
+    padding-right: 0;
+  }
+  .StatImageWrapper {
+    max-width: none;
+    width: 100%;
+  }
+  .Paragraph {
+    width: 60%;
+  }
+  .TraitsStatsWrapper {
+    margin-bottom: 500px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .DiamondImage .DiamondImageWrapper,
+  .DiamondImage .CircleImageWrapper,
+  .DiamondImage .DustImageWrapper {
+    left: 61%;
   }
 }

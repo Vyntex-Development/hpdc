@@ -99,3 +99,27 @@
   border-radius: 50%;
   margin-right: 0.5rem;
 }
+
+@media screen and (max-width: 991px) {
+  .CategoriesWrapper {
+    padding: 5rem 5vw 10rem;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .CategoriesWrapper {
+    flex-direction: column;
+  }
+  .FiltersWrapper {
+    position: static;
+    height: auto;
+  }
+
+  .FiltersWrapper > div:not(:last-of-type) {
+    width: 100%;
+    max-width: none;
+  }
+}

@@ -108,17 +108,6 @@ p {
   line-height: 1.5rem;
 }
 
-@media screen and (min-width: 1560px) {
-  body {
-    font-size: 0.90625em;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  body {
-    font-size: calc(0.20181634712411706vw + 0.625em);
-  }
-}
 .container {
   max-width: 100em;
   margin: 0 auto;
@@ -350,5 +339,28 @@ video::-webkit-media-controls {
 @keyframes dash {
   to {
     stroke-dashoffset: 200;
+  }
+}
+
+@media screen and (min-width: 1560px) {
+  body {
+    font-size: 0.90625em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    font-size: calc(0.20181634712411706vw + 0.625em);
+  }
+  .traits-slider {
+    padding-left: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .traits-slider {
+    padding-left: 0rem !important;
+    width: 100% !important;
+    margin-top: 56px;
   }
 }

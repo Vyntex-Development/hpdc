@@ -83,6 +83,12 @@
   text-align: right;
 }
 
+@media screen and (max-width: 991px) {
+  .Footer > div {
+    padding: 0rem 5vw 2.87rem;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .FooterContentWrapper {
     flex-direction: column;
