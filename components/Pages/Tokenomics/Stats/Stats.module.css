@@ -18,3 +18,10 @@
 .Chart {
   grid-column: 7/-1;
 }
+
+@media screen and (max-width: 1439px) {
+  .Chart {
+    grid-column: 6/-1;
+    margin-left: 4.2rem;
+  }
+}

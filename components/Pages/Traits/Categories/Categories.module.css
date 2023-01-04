@@ -22,7 +22,7 @@
 
 .FiltersWrapper > div p,
 .FiltersWrapper > div span {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-weight: 700;
   color: var(--color-white);
 }
@@ -51,7 +51,7 @@
 }
 
 .FilterList {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;

@@ -28,7 +28,7 @@
 .IdWrapper {
   background: rgba(70, 80, 240, 0.2);
   border-radius: 0.25rem;
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
@@ -68,7 +68,7 @@
 }
 
 .CardInfo span:nth-of-type(1) {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -77,7 +77,7 @@
 }
 
 .CardInfo span:nth-of-type(2) {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
@@ -102,7 +102,7 @@
 
 .SlideIdLarge,
 .SlideInfoWrapper h3 {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -153,6 +153,7 @@
   height: 2px;
   display: block;
   background-color: #121218;
+  transition: all 0.3s ease-in-out;
 }
 
 .ActivePaginationEl {
@@ -166,7 +167,7 @@
   left: 42.3rem !important;
   position: absolute;
   top: 22.75rem !important;
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
