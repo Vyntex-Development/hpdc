@@ -134,7 +134,7 @@
 
 .FiltersWrapper > div p,
 .FiltersWrapper > div span {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-weight: 700;
   color: var(--color-white);
 }
@@ -143,7 +143,7 @@
 .FromToWrapper > div {
   color: var(--color-white);
   opacity: 0.3;
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -200,6 +200,7 @@
   max-width: 13rem;
   flex-wrap: wrap;
   padding: 1rem 0;
+  row-gap: 0.5rem;
 }
 
 .Filters .RarityWrapper button {

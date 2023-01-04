@@ -7,7 +7,7 @@
 }
 
 .HeroCentered {
-  padding: 14.5rem 0 13rem;
+  padding: 34.5rem 0 34rem;
 }
 
 .HeroCentered .HeroWrapper {
@@ -109,4 +109,16 @@
 .imageWrapper {
   width: 100vw;
   height: 100%;
+}
+
+@media screen and (max-width: 1920px) {
+  .HeroCentered {
+    padding: 20.5rem 0 19rem;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .HeroCentered {
+    padding: 14.5rem 0 13rem;
+  }
 }

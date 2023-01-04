@@ -1,5 +1,5 @@
 .Btn {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1rem;
@@ -26,12 +26,11 @@
   background: #121218;
   border: 1px solid #121218;
   border-radius: 1.43rem;
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-weight: 400;
   line-height: 114%;
   letter-spacing: -0.04em;
-  color: var(--color-white);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
   text-transform: capitalize;
 }
 
@@ -43,8 +42,8 @@
 }
 
 .BtnActivePink {
-  border: 1px solid var(--color-purple);
-  color: var(--color-purple);
+  border: 1px solid var(--white);
+  color: var(--white);
   opacity: 1;
 }
 

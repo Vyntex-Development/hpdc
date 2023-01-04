@@ -21,6 +21,21 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Poppins-regular";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --dark-primary: #202020;
@@ -29,6 +44,7 @@
   --color-white: #ffffff;
   --color-purple: #cf4ff7;
   --color-blue: #4650f0;
+  --white: #ffffff;
 }
 
 * {
@@ -52,7 +68,7 @@ body {
 h1,
 h2,
 h4 {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
@@ -85,7 +101,7 @@ a {
 }
 
 p {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;

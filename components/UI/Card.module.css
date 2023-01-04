@@ -42,7 +42,7 @@
 }
 
 .CardInfoWrapper > div span:nth-of-type(1) {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
@@ -56,7 +56,7 @@
 .CardInfoWrapper > div:nth-of-type(2) span:nth-of-type(2),
 .CardInfoWrapper > div:nth-of-type(3) span:nth-of-type(2),
 .CardInfoWrapper > div:nth-of-type(4) span:nth-of-type(2) {
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.04em;
