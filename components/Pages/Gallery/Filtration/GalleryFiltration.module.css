@@ -40,7 +40,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 2.625rem;
+  margin-top: 3.5rem;
   transition: 0.3s;
 }
 
@@ -79,12 +79,13 @@
 }
 
 .ItemId button {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0 0.125rem 0.5rem;
   background: rgba(70, 80, 240, 0.2);
   border-radius: 0.25rem;
   color: var(--color-blue);
   border: none;
   text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 .Item p {
@@ -109,7 +110,7 @@
   justify-content: center;
   position: relative;
   padding: 0 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .FromToWrapper {
@@ -137,6 +138,8 @@
   font-family: "Poppins-bold";
   font-weight: 700;
   color: var(--color-white);
+  line-height: 1rem;
+  letter-spacing: -0.04em;
 }
 
 .FromToWrapper > div span,
@@ -150,12 +153,12 @@
   line-height: 1rem;
 }
 
-.FromToWrapper > div {
-  opacity: 1;
+.FromToWrapper > div span {
+  margin-right: 0.25rem;
 }
 
-.Filters div:nth-of-type(2) button:nth-of-type(1) {
-  margin-right: 0.5rem;
+.FromToWrapper > div {
+  opacity: 1;
 }
 
 .FiltersWrapper > div {
@@ -169,10 +172,6 @@
 
 .FiltersWrapper > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
   padding-top: 0;
-}
-
-.FiltersWrapper > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) {
-  border-bottom: none;
 }
 
 .OpacityFilter {
@@ -201,6 +200,7 @@
   flex-wrap: wrap;
   padding: 1rem 0;
   row-gap: 0.5rem;
+  column-gap: 0.25rem;
 }
 
 .Filters .RarityWrapper button {

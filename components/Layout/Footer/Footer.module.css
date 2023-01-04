@@ -9,7 +9,7 @@
   display: flex;
   align-items: flex-start;
   padding: 0rem 3.88em 2.87rem;
-  font-family: "Voyager-bold";
+  font-family: "Poppins-bold";
   position: absolute;
   z-index: 100;
   width: 100%;
@@ -43,7 +43,7 @@
 
 .Footer p,
 .Contribute {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -65,7 +65,7 @@
 }
 
 .LinksWrapper a {
-  font-family: "Voyager-regular";
+  font-family: "Poppins-regular";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;

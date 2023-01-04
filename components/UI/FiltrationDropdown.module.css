@@ -4,6 +4,7 @@
 }
 
 .Dropdown {
+  transition: 0.3s all ease-in-out;
   cursor: pointer;
   width: 100%;
   font-family: "Voyager-bold";

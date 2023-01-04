@@ -3,6 +3,7 @@ import SEO from "../components/SEO/SEO";
 import { client } from "../utils/utils";
 
 const gallery = ({ data }) => {
+  console.log(data);
   const { slices } = data.pageData.attributes;
   return (
     <>

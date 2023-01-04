@@ -15,7 +15,7 @@
 }
 
 .CardInfoWrapper {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
 }
 
 .CardVideoWrapper video {
@@ -38,7 +38,7 @@
 .CardInfoWrapper > div span:nth-of-type(1),
 .CardInfoWrapper > div span:nth-of-type(2) {
   font-size: 0.875rem;
-  line-height: 114%;
+  line-height: 1rem;
 }
 
 .CardInfoWrapper > div span:nth-of-type(1) {

@@ -5,7 +5,7 @@
   line-height: 1rem;
   cursor: pointer;
   border-radius: 3.75rem;
-  padding: 1rem 1.5rem 0.875rem;
+  padding: 1rem 1.3125rem 0.875rem;
 }
 
 .BtnTransparent {
@@ -28,7 +28,7 @@
   border-radius: 1.43rem;
   font-family: "Poppins-regular";
   font-weight: 400;
-  line-height: 114%;
+  line-height: 1rem;
   letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.3);
   text-transform: capitalize;
