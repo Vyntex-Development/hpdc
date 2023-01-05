@@ -2,6 +2,7 @@
   border-radius: 1rem;
   backdrop-filter: blur(1.5px);
   background: #121218;
+  width: 100%;
 }
 
 .CardVideoWrapper {
