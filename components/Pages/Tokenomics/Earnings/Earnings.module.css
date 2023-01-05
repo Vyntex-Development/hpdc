@@ -28,3 +28,24 @@
 .Text > div p:nth-of-type(1) {
   margin-bottom: 1.5rem;
 }
+
+@media screen and (max-width: 991px) {
+  .Earnings {
+    padding: 0rem 5vw 8rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .ImageWrapper {
+    height: 44vw;
+    margin-top: 5rem;
+  }
+
+  .Text {
+    max-width: 28.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Earnings {
+    padding: 0rem 5vw 5rem;
+  }
+}

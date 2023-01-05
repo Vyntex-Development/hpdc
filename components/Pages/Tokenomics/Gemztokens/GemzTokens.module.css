@@ -104,3 +104,46 @@
   font-style: normal;
   font-weight: 700;
 }
+
+@media screen and (max-width: 991px) {
+  .Gemztokens > div:nth-of-type(1),
+  .Gemztokens > div:nth-of-type(3) {
+    grid-column: 1 / 10;
+  }
+  .Gemztokens > div:nth-of-type(2),
+  .Gemztokens > div:nth-of-type(4) {
+    grid-column: 1/ 10;
+  }
+  .Gemztokens {
+    padding: 5rem 5vw 10rem;
+    grid-row-gap: 8rem;
+  }
+  .Gemztokens > div:nth-of-type(3) p,
+  .Gemztokens > div:nth-of-type(4) p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Gemztokens {
+    grid-row-gap: 5rem;
+    padding: 5rem 5vw 5rem;
+  }
+  .Gemztokens > div:nth-of-type(1),
+  .Gemztokens > div:nth-of-type(3) {
+    grid-column: 1 / 13;
+  }
+  .Gemztokens > div:nth-of-type(2),
+  .Gemztokens > div:nth-of-type(4) {
+    grid-column: 1/ 13;
+  }
+  .ImagesWrapper {
+    bottom: -1.5rem;
+  }
+  .Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) .ImagesWrapper {
+    bottom: -2.5rem;
+  }
+  .Gemztokens > div:nth-of-type(3) p,
+  .Gemztokens > div:nth-of-type(4) p {
+    font-size: 21px;
+  }
+}

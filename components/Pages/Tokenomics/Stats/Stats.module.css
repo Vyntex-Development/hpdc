@@ -31,16 +31,19 @@
     grid-column: 1/13;
   }
   .Chart {
-    grid-column: 1/13;
+    grid-column: 2/12;
     margin-left: 0;
   }
+
   .StatsWrapper {
     row-gap: 140px;
+    padding: 0rem 5vw 10rem;
   }
 }
 @media screen and (max-width: 767px) {
   .StatsWrapper {
     row-gap: 80px;
+    padding: 0rem 5vw 5rem;
   }
   .Chart svg {
     width: 100%;

@@ -141,3 +141,11 @@
     padding: 0 5vw;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .HeroTokenomics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

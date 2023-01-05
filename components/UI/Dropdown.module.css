@@ -61,3 +61,9 @@
 .Rotate svg {
   transform: rotate(90deg);
 }
+
+@media screen and (max-width: 767px) {
+  .Dropdown {
+    font-size: 18px;
+  }
+}
