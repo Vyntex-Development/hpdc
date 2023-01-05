@@ -11,7 +11,8 @@
   font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
-  line-height: 100%;
+  line-height: 1rem;
+  letter-spacing: -0.04em;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -40,7 +41,7 @@
 .Panel p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .Active {
@@ -63,4 +64,6 @@
 .Multiple {
   /* padding-top: 1rem; */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media screen and (max-width: 991px) {
 }

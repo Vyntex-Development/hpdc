@@ -355,6 +355,13 @@ video::-webkit-media-controls {
   .traits-slider {
     padding-left: 2rem !important;
   }
+  .traits-slider .swiper-button-prev {
+    left: 2rem !important;
+  }
+
+  .traits-slider .swiper-button-next {
+    left: 5rem !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -362,5 +369,14 @@ video::-webkit-media-controls {
     padding-left: 0rem !important;
     width: 100% !important;
     margin-top: 56px;
+  }
+  .traits-slider .swiper-button-prev {
+    left: 0 !important;
+    top: -45px !important;
+  }
+
+  .traits-slider .swiper-button-next {
+    left: 3rem !important;
+    top: -45px !important;
   }
 }

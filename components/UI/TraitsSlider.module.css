@@ -25,6 +25,7 @@
   height: auto;
   display: flex;
   align-items: center;
+  margin-top: -0.75rem;
 }
 
 .Pagination {

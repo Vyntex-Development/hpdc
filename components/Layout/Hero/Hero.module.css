@@ -3,7 +3,7 @@
 }
 
 .HeroLeft {
-  padding: 10.5rem 0 5rem;
+  padding: 10.5rem 0 3.315rem;
 }
 
 .HeroCentered {
@@ -140,6 +140,9 @@
   .Hero > div {
     padding: 0 5vw;
   }
+  .HeroLeft {
+    padding: 10.5rem 0 5rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -147,5 +150,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .HeroLeft {
+    padding: 10.5rem 0 4rem;
   }
 }

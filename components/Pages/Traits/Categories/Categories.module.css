@@ -15,9 +15,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1rem;
   width: 13rem;
   max-width: 13rem;
+  margin-bottom: 2.5rem;
 }
 
 .FiltersWrapper > div p,
@@ -28,7 +28,9 @@
 }
 
 .Paragraph:nth-of-type(1) {
-  opacity: 0.7;
+  font-family: "Poppins-regular";
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* .FiltersWrapper > div svg {
@@ -59,15 +61,13 @@
   padding: 0;
   letter-spacing: -0.04em;
   list-style: none;
-  margin-bottom: 2.5rem;
 }
 
 .FilterList li {
   margin-bottom: 1rem;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  opacity: 0.3;
-  color: var(--color-white);
+  color: rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
 }
@@ -81,6 +81,7 @@
 .FilterList li:hover span,
 .ActiveCategory span {
   border: 1px solid rgba(255, 255, 255, 1) !important;
+  background-color: var(--color-white);
 }
 
 .ActiveCategory span {
@@ -102,7 +103,7 @@
 
 @media screen and (max-width: 991px) {
   .CategoriesWrapper {
-    padding: 5rem 5vw 10rem;
+    padding: 5rem 5vw 9rem;
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -111,11 +112,20 @@
 
 @media screen and (max-width: 767px) {
   .CategoriesWrapper {
+    padding: 48px 5vw 10rem;
     flex-direction: column;
+    position: relative;
   }
   .FiltersWrapper {
     position: static;
     height: auto;
+  }
+  .FiltersWrapper div a {
+    position: absolute;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-radius: 3.75rem;
+    bottom: 80px;
   }
 
   .FiltersWrapper > div:not(:last-of-type) {

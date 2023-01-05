@@ -1,7 +1,6 @@
 .TraitsStats {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-
   padding: 5rem 0;
   width: calc(100% - 7.77em);
   margin: 0 auto;
@@ -163,7 +162,7 @@
   .DiamondImage .CircleImageWrapper,
   .DiamondImage .DustImageWrapper {
     top: 135%;
-    left: 92%;
+    left: 50%;
   }
   .Stats {
     width: 100%;
@@ -177,14 +176,47 @@
     width: 60%;
   }
   .TraitsStatsWrapper {
-    margin-bottom: 500px;
+    margin-bottom: 580px;
+  }
+  .DiamondImage {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10rem;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
+  .DiamondImage {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10rem;
+  }
+  .TraitsStats {
+    width: 90vw;
+    padding: 5rem 0;
+  }
   .DiamondImage .DiamondImageWrapper,
   .DiamondImage .CircleImageWrapper,
   .DiamondImage .DustImageWrapper {
-    left: 61%;
+    width: 90%;
+  }
+  .DiamondImageWrapper span {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 479px) {
+  .TraitsStatsWrapper {
+    margin-bottom: 510px;
+  }
+  .Paragraph {
+    width: 100%;
   }
 }
