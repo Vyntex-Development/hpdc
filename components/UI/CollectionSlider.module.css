@@ -204,7 +204,7 @@
 @media screen and (max-width: 767px) {
   .Slide {
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 64px;
   }
   .SlideCard {
     margin-right: 1rem;

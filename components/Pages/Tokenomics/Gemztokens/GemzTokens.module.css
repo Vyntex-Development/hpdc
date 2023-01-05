@@ -40,9 +40,14 @@
 }
 
 .Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   margin-bottom: 2rem;
   z-index: 2;
+}
+
+.Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) .ImagesWrapper {
+  bottom: -1rem;
+  right: -0.5rem;
 }
 
 .Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(1) p {
@@ -54,7 +59,7 @@
 }
 
 .Gemztokens > div:nth-of-type(2) .GemzCards:nth-of-type(2) {
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .Gemztokens > div:nth-of-type(2) p {
@@ -64,10 +69,6 @@
 .Gemztokens > div:nth-of-type(2) h4,
 .Gemztokens > div:nth-of-type(2) p {
   margin-bottom: 1rem;
-}
-
-.Gemztokens > div:nth-of-type(2) p:nth-of-type(2) {
-  margin-bottom: 0;
 }
 
 .ImagesWrapper {
@@ -94,7 +95,7 @@
   padding-bottom: 1.375rem;
 }
 .Gemztokens > div:nth-of-type(4) p {
-  max-width: 30rem;
+  max-width: 34rem;
 }
 
 .Gemztokens > div:nth-of-type(4) p span {

@@ -3,7 +3,7 @@ import classes from "./Dropdown.module.css";
 
 const Dropdown = ({ id, dropdownText, panelText, onActive, active, color }) => {
   return (
-    <div>
+    <div className={classes.DropWrapper}>
       <div
         id={id}
         onClick={(ev) => onActive(ev, id)}

@@ -64,7 +64,7 @@
 
 .HeroTokenomics button,
 .homePage button {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 }
 
 .HeroTokenomics button:nth-of-type(1),
@@ -75,7 +75,7 @@
 .HeroTokenomics h1,
 .homePage h1 {
   max-width: 37rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .HeroLeft h1 {

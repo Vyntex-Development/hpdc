@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 3rem;
-  line-height: 133%;
+  line-height: 1.33;
   max-width: 34rem;
   color: #848484;
 }
@@ -28,7 +28,7 @@
 }
 
 .Info > div:nth-of-type(1) {
-  grid-column: 2/ 6;
+  grid-column: 2/ 7;
 }
 
 .Info > div:nth-of-type(1) > div {
@@ -73,5 +73,9 @@
     font-size: 2rem;
     line-height: 1.2;
     max-width: none;
+  }
+  .Info {
+    padding: 7.25rem 5vw 1.5rem;
+    row-gap: 3.5rem;
   }
 }

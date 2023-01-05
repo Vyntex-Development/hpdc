@@ -1,3 +1,8 @@
+.DropWrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
 .Dropdown {
   cursor: pointer;
   width: 100%;
@@ -9,10 +14,6 @@
   color: #ffffff;
   display: flex;
   align-items: center;
-  width: 27rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
   opacity: 0.3;
 }
 
@@ -41,7 +42,7 @@
 .Panel p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .Active {

@@ -8,7 +8,7 @@
   color: var(--color-white);
   margin-top: 1rem;
   margin-bottom: 2.5rem;
-  max-width: 18.18rem;
+  max-width: 27rem;
 }
 
 .Stats {
@@ -23,5 +23,27 @@
   .Chart {
     grid-column: 6/-1;
     margin-left: 4.2rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Stats {
+    grid-column: 1/13;
+  }
+  .Chart {
+    grid-column: 1/13;
+    margin-left: 0;
+  }
+  .StatsWrapper {
+    row-gap: 140px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .StatsWrapper {
+    row-gap: 80px;
+  }
+  .Chart svg {
+    width: 100%;
+    height: auto;
   }
 }
