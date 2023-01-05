@@ -1,7 +1,7 @@
 import classes from "./CustomLink.module.css";
 import Link from "next/link";
 
-const CustomLink = ({ children, type, href }) => {
+const CustomLink = ({ children, type, href, onClick }) => {
   let className;
 
   if (type === "blue") {
@@ -13,7 +13,7 @@ const CustomLink = ({ children, type, href }) => {
   }
 
   return (
-    <div className={className}>
+    <div className={className} onClick={onClick}>
       <Link href={href}>{children}</Link>
     </div>
   );
