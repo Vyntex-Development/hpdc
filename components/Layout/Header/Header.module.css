@@ -104,8 +104,8 @@
   row-gap: 1rem;
 }
 .NavLinksMobile a {
-  font-size: 54px;
-  line-height: 74px;
+  font-size: 48px;
+  line-height: 1.2;
   color: #f7f6f6;
 }
 

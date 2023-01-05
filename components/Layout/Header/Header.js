@@ -107,9 +107,17 @@ const Header = () => {
                 onClick={() => {
                   setNavOpen(!navOpen);
                 }}
-                href="/tokenomics"
+                href="/gallery"
               >
-                Faq
+                Gallery
+              </Link>
+              <Link
+                onClick={() => {
+                  setNavOpen(!navOpen);
+                }}
+                href="/leaderboard"
+              >
+                Leaderboard
               </Link>
             </div>
           </div>
