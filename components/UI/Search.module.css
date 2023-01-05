@@ -46,9 +46,14 @@
     position: absolute;
     top: 0;
     right: 5vw;
+    width: 34px;
+    height: 34px;
   }
   .Open {
     width: 12.875rem;
     border-radius: 60px;
+  }
+  .Search svg {
+    right: 8px;
   }
 }

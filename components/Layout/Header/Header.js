@@ -4,6 +4,8 @@ import classes from "./Header.module.css";
 import Button from "../../UI/Button";
 import Link from "next/link";
 import useWallet from "../../hooks/useWallet";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const { isConnected, setConnectionHandler, removeConnectionHandler } =
@@ -15,6 +17,16 @@ const Header = () => {
       return;
     }
     setConnectionHandler();
+  };
+  const [navOpen, setNavOpen] = useState(false);
+  const [header, setHeader] = useState(false);
+  const router = useRouter();
+  const onNavigationClose = () => {
+    setNavOpen(false);
+  };
+
+  const openNavHandler = () => {
+    setNavOpen(!navOpen);
   };
 
   return (
@@ -60,6 +72,47 @@ const Header = () => {
           <Button onClick={connect} type="transparent">
             {!isConnected ? "Connect Wallet" : "Disconnect Wallet"}
           </Button>
+          <div
+            onClick={openNavHandler}
+            className={`${classes.MenuButton} ${
+              navOpen ? classes.HamburgerTransform : ""
+            }`}
+          >
+            <div></div>
+            <div></div>
+          </div>
+          <div
+            className={`${classes.NavMobile} ${
+              navOpen ? classes.NavOpen : classes.NavClose
+            }`}
+          >
+            <div className={classes.NavLinksMobile}>
+              <Link
+                onClick={() => {
+                  setNavOpen(!navOpen);
+                }}
+                href="/tokenomics"
+              >
+                Tokenomics
+              </Link>
+              <Link
+                onClick={() => {
+                  setNavOpen(!navOpen);
+                }}
+                href="/traits"
+              >
+                Traits
+              </Link>
+              <Link
+                onClick={() => {
+                  setNavOpen(!navOpen);
+                }}
+                href="/tokenomics"
+              >
+                Faq
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </header>

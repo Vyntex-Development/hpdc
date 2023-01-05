@@ -27,3 +27,11 @@
   padding: 1rem 1.5rem 0.875rem;
   line-height: 1rem;
 }
+
+@media screen and (max-width: 767px) {
+  .LinkBlue a,
+  .LinkTransparent a {
+    padding: 8px 16px;
+    line-height: 1rem;
+  }
+}

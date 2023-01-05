@@ -56,14 +56,97 @@
   margin-right: 0;
 }
 
+/*nav open*/
+.MenuButton {
+  display: none;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.MenuButton div {
+  width: 2.5rem;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.HamburgerTransform div:nth-of-type(1) {
+  transform: translate(0px, 5px);
+}
+.HamburgerTransform div:nth-of-type(2) {
+  transform: translate(0px, -5px);
+}
+.NavMobile {
+  display: none;
+}
+.NavOpen {
+  background: linear-gradient(
+    180deg,
+    rgba(70, 80, 240, 0.95) 0%,
+    rgba(9, 9, 13, 0.95) 100%
+  );
+  backdrop-filter: blur(25.5px);
+}
+.NavClose {
+  background-color: turquoise;
+}
+.NavLinksMobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
+}
+.NavLinksMobile a {
+  font-size: 54px;
+  line-height: 74px;
+  color: #f7f6f6;
+}
+
 @media screen and (max-width: 991px) {
   .Header > div {
     padding: 1.5rem 5vw;
+  }
+  .NavMobile {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    opacity: 0;
+    top: -3000px;
+    transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+  .NavOpen {
+    opacity: 1;
+    top: 0px;
+  }
+  .HeaderCol button {
+    position: relative;
+    z-index: 5;
+    padding: 8px 12px;
+  }
+  .LogoWrapper {
+    position: relative;
+    z-index: 5;
   }
 }
 
 @media screen and (max-width: 767px) {
   .HeaderCol nav ul {
     display: none;
+  }
+  .MenuButton {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    cursor: pointer;
   }
 }
