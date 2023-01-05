@@ -219,4 +219,7 @@
     left: auto;
     bottom: 0rem;
   }
+  .SlideInfoWrapper {
+    margin-left: -1rem;
+  }
 }
