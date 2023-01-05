@@ -28,3 +28,21 @@
     bottom: 5vh;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .SwitchWrapper {
+    padding-left: 5vw;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .SwitchWrapper {
+    padding-right: 5vw;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .SwitchWrapper > div {
+    margin-right: 0;
+  }
+}
