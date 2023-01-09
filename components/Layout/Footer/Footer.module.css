@@ -87,6 +87,9 @@
   .Footer > div {
     padding: 0rem 5vw 2.87rem;
   }
+  .LogoWrapper {
+    margin-right: 1rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -107,5 +110,8 @@
   }
   .FooterContentWrapper > div:nth-of-type(2) {
     row-gap: 1rem;
+  }
+  .FooterContentWrapper .Contribute {
+    text-align: center;
   }
 }
