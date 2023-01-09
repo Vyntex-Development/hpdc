@@ -29,6 +29,34 @@ const Header = () => {
     setNavOpen(!navOpen);
   };
 
+  const NavLink = ({ href, children }) => {
+    const closeNav = () => {
+      setNavOpen(false);
+    };
+
+    return (
+      <Link href={href}>
+        <a onClick={closeNav}>{children}</a>
+      </Link>
+    );
+  };
+
+  useEffect(() => {
+    const onNavigationClose = (event) => {
+      if (
+        !event.target.closest(`.${classes.NavMobile}`) &&
+        !event.target.closest(`.${classes.MenuButton}`)
+      ) {
+        setNavOpen(false);
+      }
+    };
+
+    window.addEventListener("click", onNavigationClose);
+    return () => {
+      window.removeEventListener("click", onNavigationClose);
+    };
+  }, []);
+
   return (
     <header className={classes.Header}>
       <div className="container">
@@ -87,38 +115,10 @@ const Header = () => {
             }`}
           >
             <div className={classes.NavLinksMobile}>
-              <Link
-                onClick={() => {
-                  setNavOpen(!navOpen);
-                }}
-                href="/tokenomics"
-              >
-                Tokenomics
-              </Link>
-              <Link
-                onClick={() => {
-                  setNavOpen(!navOpen);
-                }}
-                href="/traits"
-              >
-                Traits
-              </Link>
-              <Link
-                onClick={() => {
-                  setNavOpen(!navOpen);
-                }}
-                href="/gallery"
-              >
-                Gallery
-              </Link>
-              <Link
-                onClick={() => {
-                  setNavOpen(!navOpen);
-                }}
-                href="/leaderboard"
-              >
-                Leaderboard
-              </Link>
+              <NavLink href="/tokenomics">Tokenomics</NavLink>
+              <NavLink href="/traits">Traits</NavLink>
+              <NavLink href="/gallery">Gallery</NavLink>
+              <NavLink href="/leaderboard">Leaderboard</NavLink>
             </div>
           </div>
         </div>
