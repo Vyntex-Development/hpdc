@@ -112,7 +112,10 @@ p {
   max-width: 100em;
   margin: 0 auto;
 }
-
+body.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
 .swiper-button-next,
 .swiper-button-prev,
 #swiper-back,

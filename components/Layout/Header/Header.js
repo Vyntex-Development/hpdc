@@ -25,13 +25,23 @@ const Header = () => {
     setNavOpen(false);
   };
 
+  //const openNavHandler = () => {
+  //setNavOpen(!navOpen);
+  //};
+
   const openNavHandler = () => {
     setNavOpen(!navOpen);
+    if (navOpen) {
+      document.body.classList.remove("no-scroll");
+    } else {
+      document.body.classList.add("no-scroll");
+    }
   };
 
   const NavLink = ({ href, children }) => {
     const closeNav = () => {
       setNavOpen(false);
+      document.body.classList.remove("no-scroll");
     };
 
     return (
